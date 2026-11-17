@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                echo 'Getting source code from GitHub'
                 git branch: 'main',
                     url: 'https://github.com/veerbasannaashwini2005/week.git'
             }
@@ -12,21 +13,15 @@ pipeline {
 
         stage('Compile') {
             steps {
-<<<<<<< HEAD
+                echo 'Compiling Java program'
                 bat 'javac HelloWorld.java'
-=======
-                sh 'javac HelloWorld.java'
->>>>>>> 5f2e80aed0da4fa197578be42c09283a088350eb
             }
         }
 
         stage('Run') {
             steps {
-<<<<<<< HEAD
+                echo 'Running Java program'
                 bat 'java HelloWorld'
-=======
-                sh 'java HelloWorld'
->>>>>>> 5f2e80aed0da4fa197578be42c09283a088350eb
             }
         }
     }
